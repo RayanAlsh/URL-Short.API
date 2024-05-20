@@ -11,7 +11,7 @@ public class ApplicationDbContext : DbContext
     {
         _passwordHasher = passwordHasher;
     }
-    public DbSet<URL> Transactions { get; set; }
+    public DbSet<URL> URLs { get; set; }
     public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,7 +23,8 @@ public class ApplicationDbContext : DbContext
                 Id = Guid.NewGuid(),
                 Email = "admin@example.com", // Replace with your admin email
                 Password = _passwordHasher.HashPassword("qwerty1234567"), // Use the utility method
-                Role = "Admin"
+                Role = "Admin",
+                Shortened_URLs = []
             }
         );
 

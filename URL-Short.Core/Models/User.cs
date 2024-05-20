@@ -1,20 +1,20 @@
-﻿namespace URL_Short.Core;
-
-public class User
+﻿namespace URL_Short.Core
 {
-    public Guid Id { get; set; }
-
-    public string Email { get; set; }
-
-    public string Password { get; set; }
-    public string Role { get; set; }
-    public DateTime CreatedAt { get; private set; }
-    public List<URL> Shortened_URLs { get; set; }
-    public User()
+    public class User
     {
-        Id = Guid.NewGuid();
-        CreatedAt = DateTime.Now;
-        Role = "User"; // Set default role to "User"
+        public Guid Id { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
+        public DateTime CreatedAt { get; private set; }
+        public List<string> Shortened_URLs { get; set; }
 
+        public User()
+        {
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.Now;
+            Role = "User"; // Set default role to "User"
+            Shortened_URLs = new List<string>();
+        }
     }
 }

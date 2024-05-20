@@ -101,6 +101,21 @@ public class UsersRepository : IRepository<User>
         }
     }
 
+    public async Task<User> AddShortenedUrlAsync(User entity, string shortenedUrl)
+    {
+        try
+        {
+            entity.Shortened_URLs.Add(shortenedUrl);
+            _dbContext.Entry(entity).State = EntityState.Modified; // Mark entity as modified
+            await SaveChangesAsync();
+            return entity;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "An error occurred while adding a shortened URL to the user");
+            return null;
+        }
+    }
     public async Task DeleteAsync(Guid id)
     {
         try

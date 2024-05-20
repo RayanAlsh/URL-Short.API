@@ -1,20 +1,16 @@
-﻿namespace URL_Short.Core;
-
-public class URL
+﻿namespace URL_Short.Core
 {
-    public Guid Id { get; set; }
-
-    public string Default_URL { get; set; }
-    public string Short_URL { get; set; }
-
-    public Guid CreatedBy { get; set; }
-    public DateTime CreatedAt { get; set; }
-
-
-
-    public URL()
+    public class URL
     {
-        Id = Guid.NewGuid();
-        CreatedAt = DateTime.Now;
+        public Guid Id { get; set; }
+        public string Default_URL { get; set; }
+        public string Short_URL { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        public URL()
+        {
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.Now;
+        }
     }
 }
