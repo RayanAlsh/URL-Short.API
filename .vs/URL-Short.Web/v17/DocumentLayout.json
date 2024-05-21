@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\URL-Short.Infrastructure\\Data\\Migrations\\20240520140855_init1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:URL-Short.Infrastructure\\Data\\Migrations\\20240520140855_init1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\URL-Short.Infrastructure\\Data\\Migrations\\20240521081716_init3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:URL-Short.Infrastructure\\Data\\Migrations\\20240521081716_init3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\URL-Short.Infrastructure\\Data\\Migrations\\20240520140218_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:URL-Short.Infrastructure\\Data\\Migrations\\20240520140218_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3045CAFC-8DFC-43BB-AEF3-837B5C86741D}|URL-Short.Infrastructure\\URL-Short.Infrastructure.csproj|c:\\users\\ralshanaiber\\desktop\\work\\tasks\\url-shortener\\url-short.api\\url-short.web\\url-short.infrastructure\\data\\migrations\\20240520140855_init1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3045CAFC-8DFC-43BB-AEF3-837B5C86741D}|URL-Short.Infrastructure\\URL-Short.Infrastructure.csproj|solutionrelative:url-short.infrastructure\\data\\migrations\\20240520140855_init1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3045CAFC-8DFC-43BB-AEF3-837B5C86741D}|URL-Short.Infrastructure\\URL-Short.Infrastructure.csproj|c:\\users\\ralshanaiber\\desktop\\work\\tasks\\url-shortener\\url-short.api\\url-short.web\\url-short.infrastructure\\data\\migrations\\20240520140218_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3045CAFC-8DFC-43BB-AEF3-837B5C86741D}|URL-Short.Infrastructure\\URL-Short.Infrastructure.csproj|solutionrelative:url-short.infrastructure\\data\\migrations\\20240520140218_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20240521081716_init3.cs",
+              "DocumentMoniker": "C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\URL-Short.Infrastructure\\Data\\Migrations\\20240521081716_init3.cs",
+              "RelativeDocumentMoniker": "URL-Short.Infrastructure\\Data\\Migrations\\20240521081716_init3.cs",
+              "ToolTip": "C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\URL-Short.Infrastructure\\Data\\Migrations\\20240521081716_init3.cs",
+              "RelativeToolTip": "URL-Short.Infrastructure\\Data\\Migrations\\20240521081716_init3.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T08:17:16.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "20240520140855_init1.cs",
               "DocumentMoniker": "C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\URL-Short.Infrastructure\\Data\\Migrations\\20240520140855_init1.cs",
               "RelativeDocumentMoniker": "URL-Short.Infrastructure\\Data\\Migrations\\20240520140855_init1.cs",
@@ -35,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "20240520140218_init.cs",
               "DocumentMoniker": "C:\\Users\\ralshanaiber\\Desktop\\Work\\Tasks\\URL-Shortener\\URL-Short.API\\URL-Short.Web\\URL-Short.Infrastructure\\Data\\Migrations\\20240520140218_init.cs",
               "RelativeDocumentMoniker": "URL-Short.Infrastructure\\Data\\Migrations\\20240520140218_init.cs",
@@ -43,8 +60,7 @@
               "RelativeToolTip": "URL-Short.Infrastructure\\Data\\Migrations\\20240520140218_init.cs",
               "ViewState": "AQIAACQAAAAAAAAAAAAswC4AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:02:18.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T14:02:18.178Z"
             }
           ]
         }

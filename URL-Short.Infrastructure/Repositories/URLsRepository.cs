@@ -115,4 +115,10 @@ public class URLsRepository : IRepository<URL>
             return null;
         }
     }
+    public async Task<bool> ExistsAsync(string shortUrl)
+    {
+        return await _dbSet.AnyAsync(u => u.Short_URL == shortUrl);
+    }
+
 }
+

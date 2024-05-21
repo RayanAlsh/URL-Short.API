@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using URL_Short.Core;
 using URL_Short.Infrastructure;
 using URL_Short.Web.Filters;
@@ -7,7 +8,7 @@ using URL_Short.Web.Filters;
 namespace URL_Short.Web;
 
 
-[Route("api/[controller]")]
+[Route("/")]
 [ApiController]
 
 public class UrlController : ControllerBase
@@ -30,7 +31,7 @@ public class UrlController : ControllerBase
     }
 
 
-    [HttpGet]
+    [HttpGet("api/Url")] // Route for GetAll action
     [Authorize]
     [AdminAuthorize]
 
@@ -49,14 +50,27 @@ public class UrlController : ControllerBase
 
     }
 
-    [HttpPost]
+    [HttpPost("api/Url")] // Route for ShortenUrl action
     public async Task<IActionResult> ShortenUrl([FromBody] ShortUrlRequestDTO requestDto)
     {
         try
         {
-            string Generatedshorturl = $"{Request.Scheme}://{Request.Host}/" + _urlShortenerService.GenerateShortUrl();
+            string Generatedshorturl;
+            bool urlExists;
+
+            do
+            {
+                Generatedshorturl = _urlShortenerService.GenerateShortUrl();
+                urlExists = await _urlsRepository.ExistsAsync(Generatedshorturl);
+            } while (urlExists);
 
 
+            string fullShortUrl = Url.Action(
+                       action: nameof(RedirectToUrl),
+                       controller: "Url",
+                       values: new { shortUrl = Generatedshorturl },
+                       protocol: Request.Scheme
+                   );
             URL newUrl = (new URL
             {
                 Default_URL = requestDto.Default_URL,
@@ -70,12 +84,12 @@ public class UrlController : ControllerBase
                 var user = await _usersRepository.GetByIdAsync(requestDto.UserId);
                 if (user != null)
                 {
-                    await _usersRepository.AddShortenedUrlAsync(user, newUrl.Short_URL);
+                    await _usersRepository.AddShortenedUrlAsync(user, fullShortUrl);
                 }
             }
             var responseDTO = new ShortUrlResponseDTO
             {
-                Short_URL = newUrl.Short_URL,
+                Short_URL = fullShortUrl,
             };
 
             return Ok(responseDTO);
@@ -88,5 +102,29 @@ public class UrlController : ControllerBase
         }
 
     }
+
+    [HttpGet("{shortUrl}")] // Route for accessing short URLs directly
+    public async Task<IActionResult> RedirectToUrl(string shortUrl)
+    {
+        try
+        {
+            var urls = await _urlsRepository.GetAsync(u => u.Short_URL.ToLower() == shortUrl.ToLower());
+            var urlEntity = urls.FirstOrDefault();
+
+            if (urlEntity == null)
+            {
+                return NotFound();
+            }
+
+            return Redirect(urlEntity.Default_URL);
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, "An unexpected error occurred.");
+        }
+    }
+
+
+
 
 }
