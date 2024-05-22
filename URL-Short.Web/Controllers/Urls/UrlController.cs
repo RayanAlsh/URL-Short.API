@@ -124,7 +124,27 @@ public class UrlController : ControllerBase
         }
     }
 
+    [HttpGet("api/Url/{UserId}")] // Route for GetAllUrls for a user action
+    [Authorize]
 
+    public async Task<IActionResult> GetUserUrls(Guid UserId)
+    {
+        try
+        {
+            var user = await _usersRepository.GetByIdAsync(UserId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user.Shortened_URLs);
+        }
+        catch (Exception e)
+        {
+
+            return StatusCode(500, "An unexpected error occurred.");
+        }
+
+    }
 
 
 }
